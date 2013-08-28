@@ -1,0 +1,2 @@
+set solib-search-path /home/rohit/android/workspace/vuforia/ImageTargets-2-6-7/obj/local/armeabi-v7a
+directory /home/rohit/android/android-ndk-r8d/platforms/android-8/arch-arm/usr/include /home/rohit/android/android-ndk-r8d/sources/cxx-stl/system/include ../../../../vuforia-sdk-android-2-6-10/build/include /home/rohit/android/workspace/vuforia/ImageTargets-2-6-7/jni
