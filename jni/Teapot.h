@@ -25,7 +25,7 @@ static const float teapotVertices2[NUM_TEAPOT_OBJECT_VERTEX * 3] =
 
 #define si 85
 
-static const float teapotVertices[NUM_TEAPOT_OBJECT_VERTEX * 3] =
+float teapotVertices[NUM_TEAPOT_OBJECT_VERTEX * 3] =
 {
 		// back
 		    -si, -si, 0.0,

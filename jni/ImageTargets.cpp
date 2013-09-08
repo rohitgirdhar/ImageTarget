@@ -206,7 +206,7 @@ Java_com_qualcomm_QCARSamples_ImageTargets_ImageTargets_loadTrackerData(JNIEnv *
     }
 
     // Load the data sets:
-    if (!dataSetStonesAndChips->load("StonesAndChips.xml", QCAR::DataSet::STORAGE_APPRESOURCE))
+    if (!dataSetStonesAndChips->load("RestoringLens.xml", QCAR::DataSet::STORAGE_APPRESOURCE))
     {
         LOG("Failed to load data set.");
         return 0;
@@ -351,7 +351,22 @@ Java_com_qualcomm_QCARSamples_ImageTargets_ImageTargetsRenderer_renderFrame(JNIE
 
         // Choose the texture based on the target name:
         int textureIndex;
-        if (strcmp(trackable.getName(), "chips") == 0)
+        float rat = 1.0;
+        if (strcmp(trackable.getName(), "1_Dist") == 0) {
+        	textureIndex = 0;
+        } else if (strcmp(trackable.getName(), "2_Dist") == 0) {
+        	textureIndex = 1;
+        	rat = 0.22;
+        } else if (strcmp(trackable.getName(), "3_Dist") == 0) {
+        	textureIndex = 2;
+        	rat = 1.5;
+        } else if (strcmp(trackable.getName(), "4_Dist") == 0) {
+        	textureIndex = 3;
+
+        } else if (strcmp(trackable.getName(), "5_Dist") == 0) {
+        	textureIndex = 4;
+        }
+        else if (strcmp(trackable.getName(), "chips") == 0)
         {
             textureIndex = 0;
         }
@@ -363,6 +378,11 @@ Java_com_qualcomm_QCARSamples_ImageTargets_ImageTargetsRenderer_renderFrame(JNIE
         {
             textureIndex = 2;
         }
+
+        teapotVertices[1] = -si*rat;
+        teapotVertices[4] = -si*rat;
+        teapotVertices[7] = si*rat;
+        teapotVertices[10] = si*rat;
 
         const Texture* const thisTexture = textures[textureIndex];
 

@@ -365,14 +365,11 @@ public class ImageTargets extends Activity
     use for rendering. */
     private void loadTextures()
     {
-        mTextures.add(Texture.loadTextureFromApk("TextureTeapotBrass.png",
-                                                 getAssets()));
-        mTextures.add(Texture.loadTextureFromApk("TextureTeapotBlue.png",
-                                                 getAssets()));
-        mTextures.add(Texture.loadTextureFromApk("TextureTeapotRed.png",
-                getAssets()));
-        mTextures.add(Texture.loadTextureFromApk("good.jpg",
-                getAssets()));
+        mTextures.add(Texture.loadTextureFromApk("1_Rest.jpg", getAssets()));
+        mTextures.add(Texture.loadTextureFromApk("2_Rest.jpg", getAssets()));
+        mTextures.add(Texture.loadTextureFromApk("3_Rest.jpg", getAssets()));
+        mTextures.add(Texture.loadTextureFromApk("4_Rest.jpg", getAssets()));
+        mTextures.add(Texture.loadTextureFromApk("5_Rest.jpg", getAssets()));
     }
 
 
@@ -847,7 +844,7 @@ public class ImageTargets extends Activity
     /** Returns the texture object at the specified index. */
     public Texture getTexture(int i)
     {
-        return mTextures.elementAt(3);
+        return mTextures.elementAt(i);
     }
 
 
